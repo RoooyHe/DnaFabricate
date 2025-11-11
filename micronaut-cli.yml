@@ -1,0 +1,6 @@
+applicationType: default
+defaultPackage: com.roy.dnafabricate
+testFramework: junit
+sourceLanguage: java
+buildTool: maven
+features: [ app-name, h2, hibernate-jpa, hibernate-validator, http-client-test, java, java-application, jax-rs, jdbc-hikari, junit, logback, maven, maven-enforcer-plugin, micronaut-aot, micronaut-http-validation, netty-server, properties, readme, serialization-jackson, shade, static-resources, websocket ]
