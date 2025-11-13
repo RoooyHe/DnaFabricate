@@ -15,4 +15,4 @@ out/
 .factorypath
 
 
-**/application.properties
+/src/main/resouces/application-dev.yaml

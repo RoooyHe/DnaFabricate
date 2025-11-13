@@ -1,0 +1,12 @@
+micronaut:
+  application:
+    name: dna_fabricate
+  server:
+    port: 7041
+
+jpa:
+  default:
+    properties:
+      hibernate:
+        hbm2ddl:
+          auto: update

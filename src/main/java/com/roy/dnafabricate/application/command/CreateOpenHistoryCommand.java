@@ -1,16 +1,14 @@
-package com.roy.dnafabricate.infrastructure.adapter.web.request;
+package com.roy.dnafabricate.application.command;
 
 import io.micronaut.core.annotation.Introspected;
-import io.micronaut.serde.annotation.Serdeable;
 import jakarta.validation.constraints.NotNull;
 import org.hibernate.validator.constraints.Length;
 
 /**
- * @Author Roy @DataTime 2025/11/11 19:43 @Mail roooyhe@163.com
+ * @Author Roy @DataTime 2025/11/12 10:16 @Mail roooyhe@163.com
  */
 @Introspected
-@Serdeable // Record 需要这个注解
-public record CreateOpenHistoryRequest(
+public record CreateOpenHistoryCommand(
     @NotNull String title,
     @NotNull @Length(min = 10) String url,
     @NotNull @Length(min = 10) String imgUrl) {}

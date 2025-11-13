@@ -1,0 +1,7 @@
+datasources:
+  default:
+    url: jdbc:postgresql://localhost:1111/dna
+    username: postgres
+    password: postgres
+    driver-class-name: org.postgresql.Driver
+    dialect: POSTGRES

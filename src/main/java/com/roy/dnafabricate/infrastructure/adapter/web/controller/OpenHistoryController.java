@@ -1,7 +1,9 @@
 package com.roy.dnafabricate.infrastructure.adapter.web.controller;
 
+import com.roy.dnafabricate.application.command.CreateOpenHistoryCommand;
 import com.roy.dnafabricate.application.dto.OpenHistoryDTO;
 import com.roy.dnafabricate.application.port.input.CreateOpenHistoryUseCase;
+import com.roy.dnafabricate.infrastructure.adapter.web.request.CreateOpenHistoryRequest;
 import com.roy.dnafabricate.infrastructure.adapter.web.response.OpenHistoryResponse;
 import io.micronaut.http.HttpResponse;
 import io.micronaut.http.MediaType;
@@ -27,12 +29,12 @@ public class OpenHistoryController {
   @Post
   @Produces(MediaType.APPLICATION_JSON)
   public HttpResponse<OpenHistoryResponse> createOpenHistory(
-      @Valid @Body OpenHistoryRequest request) {
+      @Valid @Body CreateOpenHistoryRequest request) {
     CreateOpenHistoryCommand command =
-        new CreateOpenHistoryCommand(request.getEmail(), request.getPassword());
+        new CreateOpenHistoryCommand(request.title(), request.url(), request.imgUrl());
 
-    OpenHistoryDTO userDTO = createOpenHistoryUseCase.execute(command);
+    OpenHistoryDTO openHistoryDTO = createOpenHistoryUseCase.execute(command);
 
-    return HttpResponse.created(OpenHistoryResponse.from(userDTO));
+    return HttpResponse.created(OpenHistoryResponse.from(openHistoryDTO));
   }
 }
